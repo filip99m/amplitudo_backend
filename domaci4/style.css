@@ -1,0 +1,39 @@
+body{ 
+    background: url(img/bg1.png) no-repeat center center fixed; 
+    background-size: cover;
+}
+
+.container{
+    background-color: rgba(245, 245, 220, 0.541);
+    margin-top: 20px;
+
+}
+
+.align{
+    text-align: center;
+}
+
+.size_of_icon_gift{
+    max-height: 150px;
+    max-width: 200px;
+    width: 200px;
+    height: 150px;
+}
+
+.button{
+    margin-bottom: 20px;
+}
+
+.santa{
+    width: 80px;
+    height: 80px;
+}
+
+body{
+    font-style: italic;
+}
+
+.fa-smile-beam, .fa-sad-tear{
+    color: rgba(0, 0, 0, 0.493);
+}
+

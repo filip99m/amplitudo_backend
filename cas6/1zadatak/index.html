@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cas 6 - JS nastavak</title>
+	<link href="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+	<link rel="stylesheet" type="text/css" href="./style.css">
+</head>
+<body>
+
+	<div class="container">
+
+		<div class="card bg-light mt-5">
+			<div class="card-body mx-auto" >
+				<h4 class="card-title mt-3 text-center">Registracija na portal</h4>
+				<p class="text-center">Besplatno napravite nalog na našem portalu</p>
+					<p>
+						<a href="" class="btn btn-block btn-twitter"> <i class="fab fa-twitter"></i> Twitter prijava</a>
+						<a href="" class="btn btn-block btn-facebook"> <i class="fab fa-facebook-f"></i>   Facebook prijava</a>
+					</p>
+					<p class="divider-text">
+				        <span class="bg-light">ILI</span>
+				    </p>
+					<form action="./registracija.php" method="POST" id="registracija_form">
+						<div class="form-group input-group">
+							<div class="input-group-prepend">
+							    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+							 </div>
+					        <input name="ime" id="ime_input" class="form-control" placeholder="Vaše ime i prezime" type="text">
+					    </div> <!-- form-group// -->
+					    <div class="form-group input-group">
+					    	<div class="input-group-prepend">
+							    <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+							 </div>
+					        <input name="email" id="email_input" class="form-control" placeholder="E-mail adresa " type="email">
+					    </div> <!-- form-group// -->
+					    <div class="form-group input-group">
+					    	<div class="input-group-prepend">
+							    <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
+							</div>
+							<select class="custom-select" name="telefon1">
+							    <option value="67" selected>+382 67</option>
+							    <option value="69">+382 69</option>
+							    <option value="68">+382 68</option>
+							    <option value="66">+382 66</option>
+							</select>
+							<input name="telefon2" id="telefon_input" class="form-control" placeholder="Broj telefona" type="text">
+					    </div> <!-- form-group// -->
+					    <div class="form-group input-group">
+					    	<div class="input-group-prepend">
+							    <span class="input-group-text"> <i class="fa fa-building"></i> </span>
+							</div>
+							<select class="form-control">
+								<option value="0" selected> Odaberite grad</option>
+								<option value="1">Podgorica</option>
+								<option value="2">Tivat</option>
+								<option value="3">Berane</option>
+								<option value="4">Budva</option>
+								<option value="5">Nikšić</option>
+							</select>
+						</div> <!-- form-group end.// -->
+					    <div class="form-group input-group">
+					    	<div class="input-group-prepend">
+							    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+							</div>
+					        <input class="form-control" name="password1" id="password1_input" placeholder="Lozinka" type="password">
+					    </div> <!-- form-group// -->
+					    <div class="form-group input-group">
+					    	<div class="input-group-prepend">
+							    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+							</div>
+					        <input class="form-control" name="password2" id="password2_input" placeholder="Potvrda lozinke" type="password">
+						</div> <!-- form-group// -->  
+						
+						<div class="d-none alert-danger" id="greske_div">
+							
+						</div>
+
+					    <div class="form-group">
+					        <button type="submit" class="btn btn-primary btn-block"> Registruj se </button>
+					    </div> <!-- form-group// -->      
+					    <p class="text-center">Već imate nalog? <a href="">Prijavite se</a> </p>                                                                 
+				</form>
+			</div>
+		</div> <!-- card.// -->
+
+		</div> 
+		<!--container end.//-->
+
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script src="app.js"></script>
+</body>
+</html>

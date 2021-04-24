@@ -1,0 +1,19 @@
+div{
+    background-color: lightblue;
+}
+
+.col{
+    border: 1px solid gray;
+}
+
+.col-md-3{
+    border: 1px solid gray
+}
+
+.col-sm-4{
+    border: 1px solid gray
+}
+.row{
+    border: 1px solid red;
+}
+

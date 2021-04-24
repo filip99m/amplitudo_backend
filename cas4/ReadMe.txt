@@ -1,0 +1,1 @@
+Potrebno je instalirati paket ikonica sa sajta https://fontawesome.com/, da bi se mogle prikazati u index2.html

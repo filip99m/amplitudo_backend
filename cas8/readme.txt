@@ -1,0 +1,1 @@
+Potrebno je skinuti ikonice sa sajta https://fontawesome.com/how-to-use/on-the-web/setup/hosting-font-awesome-yourself

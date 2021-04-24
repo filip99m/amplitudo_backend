@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+:root {
+  --card-size: 140px;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Nunito, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.game-container {
+  width: 605px;
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  gap: 15px;
+  margin: 0 auto;
+}
+
+.card {
+  position: relative;
+  perspective: 800px;
+  -moz-perspective: 800px;
+
+  height: var(--card-size);
+  width: var(--card-size);
+
+  border-radius: 5px;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+.card__side {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: whitesmoke;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+
+  height: var(--card-size);
+  width: var(--card-size);
+
+  transition: all 0.8s;
+  backface-visibility: hidden;
+}
+
+.card__side--front {
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(250, 109, 84),
+    rgb(148, 26, 26)
+  );
+  /* transform: rotateY(0deg); */
+  font-size: 2em;
+  font-weight: bold;
+}
+.card__side--front:hover {
+  filter: brightness(1.2);
+}
+
+.card__side--back {
+  background-color: rgb(255, 255, 255);
+  transform: rotateY(180deg);
+  z-index: -1;
+}
+
+/* .card:hover .card__side--front {
+  filter: brightness(1.2);
+} */
+
+.card.rotated .card__side--front {
+  transform: rotateY(180deg);
+}
+
+.card.rotated .card__side--back {
+  transform: rotateY(360deg);
+  overflow: hidden;
+}
+
+img {
+  height: 80%;
+  width: auto;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+@media only screen and (max-width: 660px) {
+  .game-container {
+    width: 90%;
+    gap: 3%;
+  }
+  :root {
+    --card-size: 20vw;
+  }
+}

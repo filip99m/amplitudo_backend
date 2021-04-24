@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
+  <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <title></title>
+</head>
+<body>
+
+  <div class="container">
+
+    <h1 class="text-center">jQuery i AJAX</h1> <hr>
+
+    <!-- <div id="div1"></div> -->
+    <div class="row mt-5">
+      <div class="col-10 offset-1">
+          <input type="text" id="search_term_input" class="form-control" placeholder="Unesite pojam za pretragu...">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-6 offset-3">
+          <button onclick="searchAdvice()" class="btn btn-primary mt-3 btn-block">Pretrazi bazu savjeta</button>
+      </div>
+    </div>
+    <!-- <button>Get advice</button> -->
+
+    <div class="row">
+      <div class="col-6 offset-3 table-responsive">
+          <div id="loading">
+            <i class="fa fa-spinner fa-spin fa-3x"></i>
+          </div>
+          <table class="table table-hover" id="advice_table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Advice</th>
+              </tr>
+            </thead>
+            <tbody id="advice_table_body">
+
+            </tbody>
+          </table>
+      </div>
+    </div>
+
+  </div>
+
+  
+  <!-- JS za JQuery i Bootstrap -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

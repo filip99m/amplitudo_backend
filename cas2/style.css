@@ -1,0 +1,66 @@
+/*
+selektor{
+    property1: value1;
+    property2: value2;
+}*/
+
+/*
+h1{
+    color: red;
+    font-weight: 100;
+    background-color: skyblue;
+}
+*/
+
+.main-title{
+    color: red;
+    font-weight: 900;
+    background-color: skyblue;
+}
+
+/*
+#h1_main_title{
+    color: green;
+    font-weight: 200;
+    background-color: skyblue;
+}
+*/
+
+.btn{
+    padding: 15px;
+    margin-left: 10px;
+    color: white;
+    cursor: pointer;
+    border: none; 
+}
+
+.btn:hover{
+    font-weight: 900;
+}
+
+.btn-red{
+    background-color: #c36565;
+}
+
+.btn-green{
+    background-color: #7bf77b;
+}
+
+.btn-blue{
+    background-color: #378add;
+}
+
+.btn-round{
+    border-radius: 10px;
+}
+
+h1.title{
+    color: gray;
+}
+
+body div.card#div1{
+    margin-top: 20px;
+    width: 300px;
+    height: 300px;
+    background-color: lightskyblue;
+}

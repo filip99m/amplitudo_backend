@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Wish</title>
+
+    <!-- Ikonica za title bar -->    
+    <link rel="icon" type="image/png" href="icon/2.png">
+    
+</head>
+<body>
+    
+    <div class="container">
+        <audio src="sound/JingleBells(instrumental).mp3" autoplay loop > </audio> <!-- muzika u pozadini -->
+        
+        <div class="align">
+            <img class="size_of_icon_gift" src="icon/1.gif" alt="">
+        </div>
+        <div class="title">
+            <h1 class="text-center"> Letter to Santa... <img class="santa" src="icon/3.png" alt="3"> </h1> 
+        </div>
+        
+        <form action="sacuvaj_zelju.php" method="POST">
+            <div class="form-group">
+                <label for="name"><b>Name</b></label>
+                <input type="text" class="form-control" name="name" id="name" placeholder="Your Name" required> 
+                <small id="emailHelp" class="form-text text-dark">
+                    “
+                        Bells are ringing, children singing, all is merry and bright 
+                        So hang your stockings and say your prayers, 'cause Santa Claus comes tonight
+                    ”
+                </small> <!-- citati -->
+            </div>
+            <div class="form-group">
+                <label for="last_name"><b>Last Name</b></label>
+                <input type="text" class="form-control" name="last_name" id="last_name" placeholder="Your Last Name" required> 
+                <small id="emailHelp" class="form-text text-dark">“Dear Santa, Before I explain, how much do you know already?“</small> <!-- citati -->
+            </div>
+            <div class="form-group">
+                <label for="city"><b>City</b></label>
+                <select class="form-control" id="city" name="city">
+                    <option>Andrijevica</option> 
+                    <option>Bar</option>
+                    <option>Berane</option>
+                    <option>Bijelo Polje</option>
+                    <option>Budva</option>
+                    <option>Cetinje</option>
+                    <option>Danilovgrad</option>
+                    <option>Gusinje</option>
+                    <option>Herceg Novi</option>
+                    <option>Kolasin</option>
+                    <option>Kotor</option>
+                    <option>Mojkovac</option>
+                    <option>Niksic</option>
+                    <option>Petnjica</option>
+                    <option>Plav</option>
+                    <option>Pluzine</option>
+                    <option>Pljevlja</option>
+                    <option>Podgorica</option>
+                    <option>Rozaje</option>
+                    <option>Savnik</option>
+                    <option>Tivat</option>
+                    <option>Tuzi</option>
+                    <option>Ulcinj</option>
+                    <option>Zabljak</option>
+                </select>
+                <small id="emailHelp" class="form-text text-dark">“Santa Claus has the right idea—visit people only once a year”</small> <!-- citati -->
+            </div>
+            <div class="form-group">
+                <label for="city"><b>Ho ho ho! Have you been good this year?</b></label> <br>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" name="good_bad" id="good_bad" value="oh yes SANTA!"> oh yes SANTA! <i class="fa fa-smile-beam"></i>
+                </div>
+                <small id="emailHelp" class="form-text text-dark">“It’s all fun and games until Santa checks the naughty list.”</small> <!-- citati -->
+            </div>
+            <div class="form-group">
+                <label for="text"><b>Dear Santa, this Christmas I want...</b></label>
+                <textarea name="your_wish" class="form-control" id="your_wish" rows="3" placeholder="Your wish to Santa"></textarea>
+                <small id="emailHelp" class="form-text text-dark">“I believe, I believe, it’s silly, but I believe.”</small> <!-- citati -->
+            </div>
+            <button class="btn btn-success btn-lg button">Submit</button> 
+        </form>
+    </div>
+
+
+
+    <!-- JS za JQuery i Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

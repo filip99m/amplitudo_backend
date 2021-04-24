@@ -1,0 +1,53 @@
+img{
+    float: center;
+}
+
+.prva_kolona{
+    background-color: #202020;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+};
+
+.istazi{
+    margin-bottom: 10px;
+}
+
+.boldovano{
+    font-weight: bold;
+}
+
+.error{
+    text-align: center;
+}
+
+ol{
+    list-style: none;
+    margin-left: -40px;
+}
+
+.btn{
+    width: 100%;
+}
+
+/* Promjena boje ikonica */
+.fa-film, .fa-tv{
+    color: #f3ce13;
+}
+
+
+.crna{
+    background-color: #202020;
+    color: white;
+}
+
+
+.table{
+    background-color: #202020;
+    color: white;
+    border: none;
+}
+
+.druga_kolona{
+    color: #f3ce13;
+}

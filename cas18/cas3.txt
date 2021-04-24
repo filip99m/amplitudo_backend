@@ -1,0 +1,68 @@
+1.1
+	-- pristup sa podupitom
+	select 
+		s.naziv, 
+		(select COUNT(*) from radnik_pozicija WHERE radnik_pozicija.sektor_id = s.id ) as br_zaposlenih
+	from sektor s
+	order by 2 DESC
+
+1.2
+	-- pristup sa grupisanjem
+	select 
+		s.naziv, 
+		count(radnik_id) as br_radnika
+	from sektor s 
+	left join radnik_pozicija rp on s.id = rp.sektor_id
+	group by s.naziv
+	order by 2 desc
+
+2. 
+	-- koriscenje agregatne funkcije AVG
+	select AVG(plata) as prosj_plata from radnik_pozicija
+
+3. 
+	select 
+		s.naziv, 
+		-- null safe, ako bude null vrati 0
+		COALESCE( (select AVG(plata) from radnik_pozicija where sektor_id = s.id ), 0 ) as prosj_plata
+	from sektor s
+	order by 2 DESC
+
+4. 
+	select AVG(2021 - YEAR(datum_rodjenja)) as starost from radnik
+	-- bolji nacin, da se i godina racuna
+	select AVG( YEAR(CURRENT_TIMESTAMP) - YEAR(datum_rodjenja) ) as starost from radnik
+
+5. 
+	select 
+		r.ime, 
+	    r.prezime, 
+	    DATEDIFF( DATE_ADD( r.datum_rodjenja, INTERVAL YEAR(CURRENT_TIMESTAMP) - YEAR(r.datum_rodjenja) YEAR ), CURRENT_TIMESTAMP ) as dana_do_rodj
+	from radnik r
+	-- da nije vec prosao rodjendan
+	WHERE DATEDIFF( DATE_ADD( r.datum_rodjenja, INTERVAL YEAR(CURRENT_TIMESTAMP) - YEAR(r.datum_rodjenja) YEAR ), CURRENT_TIMESTAMP ) >= 0
+	-- da je u narednih 30 dana
+	AND DATEDIFF( DATE_ADD( r.datum_rodjenja, INTERVAL YEAR(CURRENT_TIMESTAMP) - YEAR(r.datum_rodjenja) YEAR ), CURRENT_TIMESTAMP ) <= 30
+	ORDER BY 3 ASC
+
+6. 
+	select 
+		ime, 
+		prezime, 
+		datum_rodjenja,
+		-- broj godina trenutnog radnika 
+		( select YEAR(CURRENT_TIMESTAMP) - YEAR(datum_rodjenja) from radnik where id = r.id ) as godina
+	from radnik r
+	order by 4 ASC
+
+7. 
+	select 
+		r.ime, 
+		r.prezime, 
+		r.datum_rodjenja
+	from radnik r
+	left join radnik_zaposlenje rz on r.id = rz.radnik_id
+	left join radnik_pozicija rp on r.id = rp.radnik_id
+	where rz.vrsta_zaposlenja_id in ( select id from vrsta_zaposlenja where lower(naziv) like '%neodre%' )
+	and rp.plata > 800
+	and rz.banka_id in ( select id from banka where lower(naziv) like '%nlb%' )
